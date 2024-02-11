@@ -77,6 +77,12 @@ def _get_repeat_info(info):
         return RepeatInfo.SPECIFIED_DAYS, 12345
     if info == "biweekly":
         return RepeatInfo.WITH_INTERVAL, 14
+    if info == "once":
+        return RepeatInfo.NO_REPEAT, 0
+    if info == "monthly":
+        return RepeatInfo.MONTHLY, 0
+    if info == "four_weeks":
+        return RepeatInfo.WITH_INTERVAL, 7*4
     raise RuntimeError("Wrong repeat info!")
 
 
